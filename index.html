@@ -1,180 +1,101 @@
-index:
-
-HTML (index.html):
-
-HTML
-
 <!DOCTYPE html>
 <html>
-
 <head>
+    <title>我是你爹</title>
     <style>
-        ul {
-            position: relative;
-            font-size: 20px;
-            left: -20px;
-            top: -30px;
-        }
-
-        h1 {
-            position: relative;
-            font-size: 30px;
-            left: 0px;
-            top: -30px;
-        }
-
-        h2 {
-            position: relative;
-            font-size: 20px;
-            left: 22px;
-            top: -30px;
-        }
-
-        p {
-            position: relative;
-            font-size: 20px;
-            left: 0px;
-            top: -30px;
-        }
-
-        p1{
-            position: relative;
-            font-size: 20px;
-            left: -20px;
-            top: -50px;
-            color: rgb(115, 90, 239)
-        }
-        p2{
-            position: relative;
-            font-size: 20px;
-            left: 0px;
-            top: -20px;
-            color: rgb(125, 190, 248)
-        }
-        img{
-            position: relative;
-            font-size: 20px;
-            left: -10px;
-            top: -80px;
-        }
-        button{
-            position: relative;
-            font-size: 20px;
-            left: -100px;
-            top: -10px;
-        }
-         select{
-            position: relative;
-            font-size: 20px;
-            left: 400px;
-            top: -20px;
-
-         }
-         select1{
-            position: relative;
-            font-size: 20px;
-            left: 400px;
-            top: -20px;
-
-         }
-        
-
         body {
             background-image: url("https://upload-os-bbs.hoyolab.com/upload/2025/01/06/c34f5dd8ae67e50c05847aca51c55bb9_3358211197221259924.jpg");
             background-size: cover;
-            /* 讓圖片填滿整個畫面 */
             background-repeat: no-repeat;
-            /* 防止圖片重複 */
+            font-family: Arial, sans-serif; /* 新增通用字型 */
+            margin: 0; /* 移除 body 的預設邊距 */
+            padding: 0; /* 移除 body 的預設內邊距 */
+            color: #333; /* 設定預設文字顏色 */
         }
 
-        .center {
+        header, main, footer {
+            padding: 20px;
+            text-align: center; /* 將 header, main, footer 內容置中 */
+        }
+
+        h1 {
+            font-size: 2.5em; /* 使用 em 單位，更具響應性 */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        p, .styled-paragraph { /* 使用 class 統一設定段落樣式 */
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .highlight-blue { /* 使用 class 設定強調文字顏色 */
+            color: rgb(115, 90, 239);
+        }
+
+        .highlight-light-blue {
+            color: rgb(125, 190, 248);
+        }
+
+        img {
+            max-width: 100%; /* 圖片寬度不超過父元素 */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button, select {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .relative-box {
+            position: relative;
             text-align: center;
-        }
-
-        .absolute {
-            position: absolute;
-            top: 50px;
-            left: 100px;
+            margin-top: 50px;
         }
 
         .moved-element {
-            position: relative;
-            left: 0px;
-            top: 230px;
-            text-align: center;
             background-color: lightblue;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
-    <title>我是你爹</title>
-    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
-        <select id="urlSelect">
+        <select id="siteSelect">
             <option value="">請選擇網站</option>
-            <option value="option1" data-url="https://www.kidsa-z.com/ng/login/class-chart">raz kid(ylee115)</option>
-            <option value="option2" data-url="https://www.op.gg/summoners/tw/Knaves-0616">關於你爹</option>
-            <option value="option3" data-url="https://guidephy.github.io/Ophysics">guidephy</option>
-          </select>
-        <script>document.getElementById("urlSelect").addEventListener("change", function() {
-            var selectedUrl = this.options[this.selectedIndex].getAttribute("data-url");
-            if (selectedUrl) {
-              window.location.href = selectedUrl;
-            }
-          });</script>
-
-          <select id="urlSelect">
+            <option value="https://www.kidsa-z.com/ng/login/class-chart">raz kid(ylee115)</option>
+            <option value="https://www.op.gg/summoners/tw/Knaves-0616">關於你爹</option>
+            <option value="https://guidephy.github.io/Ophysics">guidephy</option>
+        </select>
+        <select id="placeholderSelect">
             <option value="">你想想</option>
-            <option value="option1" data-url="＃">？</option>
-            <option value="option2" data-url="＃">？</option>
-            <option value="option3" data-url="＃">？</option>
-          </select>
-        <script>document.getElementById("urlSelect").addEventListener("change", function() {
-            var selectedUrl = this.options[this.selectedIndex].getAttribute("data-url");
-            if (selectedUrl) {
-              window.location.href = selectedUrl;
-            }
-          });</script>
-          
+            <option value="#">？</option>
+            <option value="#">？</option>
+            <option value="#">？</option>
+        </select>
         <h1>歡迎來到你爹</h1>
-
     </header>
 
     <main>
         <section>
             <h2>最新消息</h2>
-            <img class="img1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f////09PXOz8/5+vr8/P3////////29vf///////84qlf8wAdGiPX8/PzsUUTqQjQsqFLrSj3S3/w6g/TqPCs0gPQgpUf85+bv9P+63sL62Nb+8ef4ycbw+PJkunkeePP81HXwgGv0jhzc5/3o9efX7N5Fr19Uj/WQy562zPr2trL94KDzoJrzoJv80Gjyl5H94qgyh9v7xzihsSp+wYV1sE5ZtXBmmvUynoWKrvzKDGT6AAAAE3RSTlMAW+TTeBLcHLMt1WsKzfUznkBIxSDAuAAAAUZJREFUKJFtktligkAMRUFZxKVuDMOAggpu1apVu+/t//9TkxBU1PsySQ4hlyGadpTd0fWOrV2R3eqyWhe80j1RpYCc7pmcI2tyaZimQw6bOTMplU9hpKIofJSUmgwtTCYq9EFhqKIJ5lbGdGIRAGhUQLNX6wRLOA2Y8vdpuvfVOJtaOjhdhL56yYrjU8cGFsRSLc4/x+DPfxBiSZN6LMlXUYXzVghBT8/7pPkdxFX28yzEO8HYI8U9dlQudMZx3AeInWWe+SrExxrhCLTre3E+M3P7FXznLn887z53a2PwGbjBLLvUP2jcYUC/FYdOA9d1g22SbN1fbizT9bUxXA+QguB4G2GlfbIFqw1i0GCzKmzDDQ1LZgPQLKHk5rAJpmSj0ykH0jxArW4V79yqF1bMkEckjYvFrTWIy0btApFsx7m68Ff1D4OdMHbngtKsAAAAAElFTkSuQmCC">
-            <p1>你是沙雕</p1>
-        <a href="https://www.youtube.com/">
-            <button id="Button1" class="button1">點擊我youtu殺be</button>
-        </a>
-
-  <script>
-    document.getElementById('Button1').addEventListener('click', function() {
-      alert('按鈕被點擊了！');
-    });
-  </script>
-  
-            <p>這是一個G8的網站範例。</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f////09PXOz8/5+vr8/P3////////29vf///////84qlf8wAdGiPX8/PzsUUTqQjQsqFLrSj3S3/w6g/TqPCs0gPQgpUf85+bv9P+63sL62Nb+8ef4ycbw+PJkunkeePP81HXwgGv0jhzc5/3o9efX7N5Fr19Uj/WQy562zPr2trL94KDzoJrzoJv80Gjyl5H94qgyh9v7xzihsSp+wYV1sE5ZtXBmmvUynoWKrvzKDGT6AAAAE3RSTlMAW+TTeBLcHLMt1WsKzfUznkBIxSDAuAAAAUZJREFUKJFtktligkAMRUFZxKVuDMOAggpu1apVu+/t//9TkxBU1PsySQ4hlyGadpTd0fWOrV2R3eqyWhe80j1RpYCc7pmcI2tyaZimQw6bOTMplU9hpKIofJSUmgwtTCYq9EFhqKIJ5lbGdGIRAGhUQLNX6wRLOA2Y8vdpuvfVOJtaOjhdhL56yYrjU8cGFsRSLc4/x+DPfxBiSZN6LMlXUYXzVghBT8/7pPkdxFX28yzEO8HYI8U9dlQudMZx3AeInWWe+SrExxrhCLTre3E+M3P7FXznLn887z53a2PwGbjBLLvUP2jcYUC/FYdOA9d1g22SbN1fbizT9bUxXA+QguB4G2GlfbIFqw1i0GCzKmzDDQ1LZgPQLKHk5rAJpmSj0ykH0jxArW4V79yqF1bMkEckjYvFrTWIy0btApFsx7m68Ff1D4OdMHbngtKsAAAAAElFTkSuQmCC" alt="最新消息圖片">
+            <p class="styled-paragraph highlight-blue">你是沙雕</p>
+            <a href="https://www.youtube.com/">
+                <button id="youtubeButton">點擊我youtu殺be</button>
+            </a>
+            <p class="styled-paragraph">這是一個G8的網站範例。</p>
         </section>
 
         <section>
             <h2>關於我</h2>
-            <img class="img1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f////09PXOz8/5+vr8/P3////////29vf///////84qlf8wAdGiPX8/PzsUUTqQjQsqFLrSj3S3/w6g/TqPCs0gPQgpUf85+bv9P+63sL62Nb+8ef4ycbw+PJkunkeePP81HXwgGv0jhzc5/3o9efX7N5Fr19Uj/WQy562zPr2trL94KDzoJrzoJv80Gjyl5H94qgyh9v7xzihsSp+wYV1sE5ZtXBmmvUynoWKrvzKDGT6AAAAE3RSTlMAW+TTeBLcHLMt1WsKzfUznkBIxSDAuAAAAUZJREFUKJFtktligkAMRUFZxKVuDMOAggpu1apVu+/t//9TkxBU1PsySQ4hlyGadpTd0fWOrV2R3eqyWhe80j1RpYCc7pmcI2tyaZimQw6bOTMplU9hpKIofJSUmgwtTCYq9EFhqKIJ5lbGdGIRAGhUQLNX6wRLOA2Y8vdpuvfVOJtaOjhdhL56yYrjU8cGFsRSLc4/x+DPfxBiSZN6LMlXUYXzVghBT8/7pPkdxFX28yzEO8HYI8U9dlQudMZx3AeInWWe+SrExxrhCLTre3E+M3P7FXznLn887z53a2PwGbjBLLvUP2jcYUC/FYdOA9d1g22SbN1fbizT9bUxXA+QguB4G2GlfbIFqw1i0GCzKmzDDQ1LZgPQLKHk5rAJpmSj0ykH0jxArW4V79yqF1bMkEckjYvFrTWIy0btApFsx7m68Ff1D4OdMHbngtKsAAAAAElFTkSuQmCC">
-            <p1>我是你爹，熱愛網頁開發。</p1>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024你爹的網站</p>
-
-    </footer>
-
-    <script src="script.js"></script>
-    <div class="relative-box">
-        <p2>cake</p2>
-        <div class="moved-element">這我新婆夢見月瑞希</div>
-</body>
-
-</html>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f
