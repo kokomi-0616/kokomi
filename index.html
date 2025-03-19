@@ -124,18 +124,22 @@ HTML
             }
           });</script>
 
-          <select id="urlSelect">
+         <select id="urlSelect1">
             <option value="">你想想</option>
-            <option value="option1" data-url="＃">？</option>
-            <option value="option2" data-url="＃">？</option>
-            <option value="option3" data-url="＃">？</option>
+            <option value="option1" data-url="https://www.google.com">Google</option>
+            <option value="option2" data-url="https://www.youtube.com">YouTube</option>
+            <option value="option3" data-url="https://www.facebook.com">Facebook</option>
           </select>
-        <script>document.getElementById("urlSelect").addEventListener("change", function() {
-            var selectedUrl = this.options[this.selectedIndex].getAttribute("data-url");
-            if (selectedUrl) {
-              window.location.href = selectedUrl;
-            }
-          });</script>
+      
+        <script>
+        document.getElementById('urlSelect1').addEventListener('change', function() {
+          const selectedOption = this.options[this.selectedIndex];
+          const url = selectedOption.getAttribute('data-url');
+      
+          if (url) {
+            window.open(url, '_blank');
+          }
+        });</script>
           
         <h1>歡迎來到你爹</h1>
 
